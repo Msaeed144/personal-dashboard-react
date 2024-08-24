@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.iransans {
+  font-family: IRANsans , Arial, Helvetica, sans-serif;
+}
+@font-face {
+  font-family: IRANsans;
+  src: url("./font/teqh_iransansweb.ttf");
+}
