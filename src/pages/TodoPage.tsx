@@ -1,4 +1,6 @@
 import CreateNewFolderOutlinedIcon from '@mui/icons-material/CreateNewFolderOutlined';
+import ListItems from '../components/ListItems';
+
 function TodoPage() {
   return (
     <div className="flex justify-center w-full mt-10 ">
@@ -9,6 +11,9 @@ function TodoPage() {
                     <CreateNewFolderOutlinedIcon />
                 </div>
             </form>
+            <div className='h-full mt-8 overflow-auto'>
+                <ListItems />
+            </div>
         </div>
     </div>
   )
