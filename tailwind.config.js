@@ -10,7 +10,7 @@ export default {
       colors:{
         'firstcol':"#2F293E",
         'secondcol':"#D8BCFF",
-        'secondcolhov':'#000000',
+        'secondcolhov':'#c0a7e3',
         'thirdcol':"#868B93",
       },
       boxShadow:{
