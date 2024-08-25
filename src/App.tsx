@@ -1,12 +1,17 @@
-
+import { BrowserRouter , Routes , Route } from 'react-router-dom'
 import './App.css'
+import HomePage from './pages/HomePage'
+import CryptoPage from './pages/CryptoPage'
 
 function App() {
 
   return (
-    <>
-      <h2>سلام</h2>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<HomePage />}/>
+        <Route path='/crypto' element={<CryptoPage />}/>
+      </Routes>
+    </BrowserRouter>
   )
 }
 
