@@ -1,49 +1,43 @@
 import CreateNewFolderOutlinedIcon from '@mui/icons-material/CreateNewFolderOutlined';
 import ListItems from '../components/ListItems';
-import { useEffect, useState } from 'react';
+import { useEffect , FormEvent , MouseEvent , useRef  } from 'react';
 import {v4 as uuidv4} from 'uuid'
+import { Todo, TodoPageProps } from '../tools/interfaces';
+ 
+  const TodoPage: React.FC<TodoPageProps> = ({ todo, setTodo, allTodos, setAllTodos , toggleChecked , deleteTodo}) => {
 
-function TodoPage() {
-    const [ todo , setTodo ] = useState<String>("")
-    const [ allTodos , setAllTodos ] = useState([])
-    const addTodo = (e)=>{
+    const isInitialMount = useRef(true);
+    const addTodo = (e: FormEvent<HTMLFormElement> | MouseEvent<HTMLDivElement>)=>{
         e.preventDefault()
 
-        const todoItem = {
+        const todoItem :Todo = {
             id: uuidv4(),
             text: todo,
             isChecked:false,
         }
         if (todo !== ""){
-            setAllTodos([...allTodos].concat(todoItem).reverse())
+            setAllTodos(prevTodos => [...prevTodos, todoItem]);
             setTodo("")
         }
     }
     const getAllTodos = () => {
-        let stored = JSON.parse(localStorage.getItem("todo"))
+        const stored = localStorage.getItem("todo");
         if (stored){
-            setAllTodos(stored)
+            setAllTodos(JSON.parse(stored));
         }
     }
-    const toggleChecked = (id) => {
-        let updatedTodos = [...allTodos].map(todo => {
-            if(todo.id === id ) {
-                todo.isChecked = !todo.isChecked
-            }
-            return todo
-        })
-        setAllTodos(updatedTodos)
-    }
-    const deleteTodo = (id) => {
-        const filteredTodo = allTodos.filter(todo => todo.id !== id)
-        setAllTodos(filteredTodo)
-    }
+
+
     useEffect(()=>{
         getAllTodos()
     },[])
-    useEffect(()=>{
-        localStorage.setItem('todo' , JSON.stringify(allTodos))
-    },[allTodos])
+    useEffect(() => {
+        if (isInitialMount.current) {
+            isInitialMount.current = false;
+        } else {
+            localStorage.setItem('todo', JSON.stringify(allTodos));
+        }
+    }, [allTodos]);
   return (
     <div className="flex justify-center w-full mt-10 ">
         <div className="bg-thirdcol max-h-96 p-3 bg-opacity-40	shadow-3xl border border-secondcolhov rounded-lg w-5/12 text-center">
