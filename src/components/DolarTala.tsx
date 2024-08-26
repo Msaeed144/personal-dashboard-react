@@ -35,7 +35,16 @@ const DolarTala = () => {
             <h2 className="text-center mb-3">بی خبر از طلا و دلا نباشی😎</h2>
             <div className="flex justify-around mb-3">
                 <p>طلای 18 عیار :</p>
-                <p>{dolarTala ? formatNumber(Number(dolarTala.result.gol18))+"  تومان" : "در حال بارگذاری..."}</p>            </div>
+                <p>{dolarTala ? formatNumber(Number(dolarTala.result.gol18))+"  تومان" : "در حال بارگذاری..."}</p> 
+            </div>
+            <div className="flex justify-around mb-3">
+                <p>قیمت سکه تمام :</p>
+                <p>{dolarTala ? formatNumber(Number(dolarTala.result.azadi1))+" تومان" : "در حال بارگذاری..."} </p>
+            </div>
+            <div className="flex justify-around mb-3">
+                <p>قیمت دلار :</p>
+                <p>{dolarTala ? formatNumber(Number(dolarTala.result.usd1))+ " تومان" : "در حال بارگذاری..."}</p>
+            </div>
         </div>
     );
 };
