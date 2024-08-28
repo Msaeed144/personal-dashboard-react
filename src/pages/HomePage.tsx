@@ -7,6 +7,7 @@ import DolarTala from "../components/DolarTala";
 import Notif from '../assets/notif.svg';
 import User from '../assets/user.svg'
 import Search from '../assets/search.svg';
+import CryptoHomePage from "../components/CryptoHomePage";
 
 const HomePage = () => {
   const [ allTodos , setAllTodos ] = useState<Todo[]>([])
@@ -99,8 +100,10 @@ const HomePage = () => {
         </div>
 
       </div>
-      <div className="w-full h-2/6 my-5 bg-purple-500">s</div>
-      <div className="w-full h-1/6 my-5 bg-purple-500">s</div>
+      <div className="w-full h-2/6 my-5 bg-[rgb(134,139,147)] rounded-xl bg-opacity-15 border border-purple-200 p-2">
+        <CryptoHomePage />
+      </div>
+      <div className="w-full h-1/6 my-5 ">s</div>
     </div>
   )
 }
