@@ -17,8 +17,8 @@ const Bozorgan = () => {
     },[])
   return (
     <div className="p-3 text-center">
-        <h4 className=" mb-4 text-2xl">هر وقت بیای اینجا میتونی روزت رو با یه حرف قشنگ بسازی...</h4>
-        <p className="mb-4 text-xl">{sokhan?.text}</p>
+        <h4 className=" mb-4 text-xl">هر وقت بیای اینجا میتونی روزت رو با یه حرف قشنگ بسازی...</h4>
+        <p className="mb-4 text-sm">{sokhan?.text}</p>
         <p>{sokhan?.author}</p>
     </div>
   )
