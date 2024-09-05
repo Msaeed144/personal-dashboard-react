@@ -9,7 +9,7 @@ import Tooltip from '@mui/material/Tooltip';
 
 function Navbar() {
   return (
-    <nav className=' flex p-1 h-screen flex-col justify-between border-e border-secondcol border-opacity-25	 w-10'>
+    <nav className=' hidden md:flex p-1 h-screen flex-col justify-between border-e border-secondcol border-opacity-25	 w-10'>
         <div>
             <Link to="/">
                 <Tooltip title="داشبورد" placement="right" arrow enterDelay={200} leaveDelay={100}>

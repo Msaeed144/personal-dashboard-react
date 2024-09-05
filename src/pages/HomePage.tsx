@@ -53,8 +53,8 @@ const HomePage = () => {
             <img src={User} alt="" />
           </div>
           <div className="flex cursor-pointer">
-            <label htmlFor="" className=" absolute right-[20rem] top-5">
-              <img src={Search} alt="" className=" w-7"/>
+            <label htmlFor="" className=" absolute top-6 right-[19rem] md:right-[20rem] md:top-5">
+              <img src={Search} alt="" className=" md:w-7 w-4"/>
             </label>
             <input type="text" name="" id="" className=" relative bg-transparent border border-secondcol rounded-lg p-1 ps-3" placeholder="دنبال چی می گردی" />
           </div>
@@ -65,8 +65,8 @@ const HomePage = () => {
       </div>
 
 
-      <div className="w-full h-1/4 my-5 flex gap-3">
-        <div className="w-2/6  bg-[rgb(134,139,147)] rounded-xl bg-opacity-15 border border-purple-300	 shadow-4xl p-2 overflow-auto" style={{scrollbarWidth:"thin" ,scrollbarColor:"#2F293E #e0e0e0"}}>
+      <div className="w-full md:h-1/4 h-4/6 sm:h-01/2 my-5 flex md:flex-row flex-col gap-3">
+        <div className="md:w-2/6 w-full  bg-[rgb(134,139,147)] rounded-xl bg-opacity-15 border border-purple-300	 shadow-4xl p-2 overflow-auto" style={{scrollbarWidth:"thin" ,scrollbarColor:"#2F293E #e0e0e0"}}>
           <div className="flex justify-between">
           <h2 className="text-center mb-2 font-bold text-xl">لیست کار ها</h2>
           <select name="" id="" className="h-8 text-secondcol bg-transparent rounded-lg border border-secondcol" onChange={(e) => setJobStatus(e.target.value)}>
@@ -96,22 +96,22 @@ const HomePage = () => {
             }
           </div>
         </div>
-        <div className="w-3/5  bg-custom-gradient rounded-xl p-2">
+        <div className="md:w-3/5 w-full  bg-custom-gradient rounded-xl p-2">
             <Bozorgan />
         </div>
-        <div className="w-1/4 bg-[rgb(134,139,147)] rounded-xl bg-opacity-15 border border-purple-300	 shadow-4xl overflow-hidden p-2" >
+        <div className="md:w-1/4 w-full bg-[rgb(134,139,147)] rounded-xl bg-opacity-15 border border-purple-300	 shadow-4xl overflow-hidden p-2" >
             <DolarTala />
         </div>
 
       </div>
-      <div className="w-full h-1/5my-5 bg-[rgb(134,139,147)] rounded-xl bg-opacity-15 border border-purple-200 p-2">
+      <div className="w-full overflow-x-auto h-1/5my-5 bg-[rgb(134,139,147)] rounded-xl bg-opacity-15 border border-purple-200 p-2">
         <CryptoHomePage />
       </div>
-      <div className="w-full h-[29%] my-5 flex gap-3">
-            <div className=" h-full w-1/3 rounded-xl border border-purple-200 bg-[rgb(134,139,147)] bg-opacity-15">
+      <div className="w-full h-[35%] my-5 flex md:flex-row flex-col gap-3">
+            <div className=" h-full w-full md:w-1/3 rounded-xl border border-purple-200 bg-[rgb(134,139,147)] bg-opacity-15">
               <Weather />
             </div>
-            <div className=" h-full w-1/3 rounded-xl border border-purple-200 bg-[rgb(134,139,147)] bg-opacity-15 p-4">
+            <div className=" h-full w-full md:w-1/3 rounded-xl border border-purple-200 bg-[rgb(134,139,147)] bg-opacity-15 p-4">
               <h3 className=" text-center font-extrabold text-3xl mb-3 text-[#60B7FF]">توضیحات پروژه</h3>
               <p className="mb-2">
                 این پروژه با ری اکت و تایپ اسکریپت زده شده و برای استایل دهی از tailwind استفاده شده همچنین از api ها برای دریافت قیمت ها و ...  استفاده شده
@@ -120,7 +120,7 @@ const HomePage = () => {
                 باتشکر از وبسایت <a className="text-[#60B7FF] hover:text-[#83c3f8]" href="https://one-api.ir/"> وان سرویس</a> که از سرویس های آن در این پروژه استفاده کردم 
               </p>
             </div>
-            <div className=" h-full w-1/3 rounded-xl border border-purple-200 bg-[rgb(134,139,147)] bg-opacity-15">
+            <div className=" h-full w-full md:w-1/3 rounded-xl border border-purple-200 bg-[rgb(134,139,147)] bg-opacity-15">
               <Calendar />
             </div>
       </div>
