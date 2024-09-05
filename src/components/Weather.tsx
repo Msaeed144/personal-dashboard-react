@@ -38,7 +38,6 @@ const Weather = () => {
     ]
     const [ city , setCity ] = useState<string>("تهران")
     const [data, setData] = useState<WeatherData | null>(null);
-    const [ icon , setIcon ] = useState<string>("")
     const cityHandler = (event: React.ChangeEvent<HTMLSelectElement>) => {
         setCity(event.target.value);  // مقدار انتخاب شده را تنظیم می‌کند
       };
@@ -54,14 +53,7 @@ const Weather = () => {
             console.error("Error fetching weather data", error);
           }
         };
-        const getWeatherIcon = async () => {
-            try {
-                const icon = await axios.get(`https://one-api.ir/weather/?token=640504:66d94f859e0be&action=icon&id=${data?.weather[0].icon}`)
-                setIcon(icon)
-            }catch (error) {
-                console.error("Error fetching weather data", error);
-            }
-        }
+
 
         getWeather();
       }, [city]);
