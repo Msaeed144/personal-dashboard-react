@@ -9,6 +9,7 @@ import User from '../assets/user.svg'
 import Search from '../assets/search.svg';
 import CryptoHomePage from "../components/CryptoHomePage";
 import Weather from "../components/Weather";
+import Pollution from "../components/Pollution";
 
 const HomePage = () => {
   const [ allTodos , setAllTodos ] = useState<Todo[]>([])
@@ -110,8 +111,18 @@ const HomePage = () => {
             <div className=" h-full w-1/3 rounded-xl border border-purple-200 bg-[rgb(134,139,147)] bg-opacity-15">
               <Weather />
             </div>
-            <div className=" h-full w-1/3 rounded-xl border border-purple-200 bg-[rgb(134,139,147)] bg-opacity-15"></div>
-            <div className=" h-full w-1/3 rounded-xl border border-purple-200 bg-[rgb(134,139,147)] bg-opacity-15"></div>
+            <div className=" h-full w-1/3 rounded-xl border border-purple-200 bg-[rgb(134,139,147)] bg-opacity-15 p-4">
+              <h3 className=" text-center font-extrabold text-3xl mb-3 text-[#60B7FF]">توضیحات پروژه</h3>
+              <p className="mb-2">
+                این پروژه با ری اکت و تایپ اسکریپت زده شده و برای استایل دهی از tailwind استفاده شده همچنین از api ها برای دریافت قیمت ها و ...  استفاده شده
+              </p>
+              <p>
+                باتشکر از وبسایت https://one-api.ir/ که از سرویس های آن در این پروژه استفاده کردم 
+              </p>
+            </div>
+            <div className=" h-full w-1/3 rounded-xl border border-purple-200 bg-[rgb(134,139,147)] bg-opacity-15">
+            <Pollution />
+            </div>
       </div>
     </div>
   )
