@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { CurrencyRates } from "../tools/interfaces";
+import { englishToPersian } from "replace-persian-number";
 
 const DolarTala = () => {
     const [dolarTala, setDolarTala] = useState<CurrencyRates | null>(null);
@@ -10,7 +11,7 @@ const DolarTala = () => {
     useEffect(() => {
         const getDolarTala = async () => {
             try {
-                const response = await axios.get<CurrencyRates>("https://one-api.ir/price/?token=640504:66cc87985ca70&action=bonbast");
+                const response = await axios.get<CurrencyRates>("https://one-api.ir/price/?token=640504:66d94f859e0be&action=bonbast");
                 setDolarTala(response.data);
                 setLoading(false);
             // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -24,8 +25,8 @@ const DolarTala = () => {
     }, []);
 
     if (loading) return (
-    <div className="">
-            <h2 className="text-center mb-3">بی خبر از طلا و دلا نباشی😎</h2>
+    <div className=" text-[#60B7FF]">
+            <h2 className="text-[#60B7FF] text-center mb-3">بی خبر از طلا و دلا نباشی😎</h2>
             <p>یکم صبر کنی میگم ...😎</p>
     </div>
     )
@@ -38,19 +39,19 @@ const DolarTala = () => {
     };
     return (
         <div className=" overflow-hidden">
-            <h2 className="text-center mb-3">بی خبر از طلا و دلا نباشی😎</h2>
+            <h2 className="text-center mb-3 text-[#60B7FF]">بی خبر از طلا و دلا نباشی😎</h2>
             <div>
                 <div className="flex justify-around mb-3 text-sm">
-                    <p>طلای 18 عیار :</p>
-                    <p>{dolarTala ? formatNumber(Number(dolarTala.result.gol18))+"  تومان" : "در حال بارگذاری..."}</p>
+                    <p>طلای <span>{englishToPersian("18")}</span> عیار :</p>
+                    <p>{dolarTala ? englishToPersian(formatNumber(Number(dolarTala.result.gol18)))+"  تومان" : "در حال بارگذاری..."}</p>
                 </div>
                 <div className="flex justify-around mb-3 text-sm">
                     <p> دلار :</p>
-                    <p>{dolarTala ? formatNumber(Number(dolarTala.result.usd2))+"  تومان" : "در حال بارگذاری..."}</p>
+                    <p>{dolarTala ? englishToPersian(formatNumber(Number(dolarTala.result.usd2)))+"  تومان" : "در حال بارگذاری..."}</p>
                 </div>
                 <div className="flex justify-around mb-3 text-sm">
                     <p>سکه تمام :</p>
-                    <p>{dolarTala ? formatNumber(Number(dolarTala.result.azadi1))+"  تومان" : "در حال بارگذاری..."}</p>
+                    <p>{dolarTala ? englishToPersian(formatNumber(Number(dolarTala.result.azadi1)))+"  تومان" : "در حال بارگذاری..."}</p>
                 </div>
             </div>
         </div>
