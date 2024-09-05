@@ -16,10 +16,12 @@
     "@mui/material": "^5.16.7",
     "@react-icons/all-files": "^4.1.0",
     "axios": "^1.7.5",
+    "persian-tools": "^0.0.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.3.0",
     "react-router-dom": "^6.26.1",
+    "replace-persian-number": "^1.0.3",
     "uuid": "^10.0.0"
   },
   "devDependencies": {
