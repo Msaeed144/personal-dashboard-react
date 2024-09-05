@@ -275,4 +275,97 @@ export interface ListItemsProps {
       usd2: string;
     };
   }
+  interface MarketStats {
+    bidPrice: string;
+    askPrice: string;
+    '24h_ch': number;
+    '7d_ch': number;
+    '24h_volume': string;
+    '7d_volume': string;
+    '24h_quoteVolume': string;
+    '24h_highPrice': string;
+    '24h_lowPrice': string;
+    lastPrice: string;
+    lastQty: string;
+    lastTradeSide: string;
+    bidVolume: string;
+    askVolume: string;
+    bidCount: number;
+    askCount: number;
+    direction: {
+      SELL: number;
+      BUY: number;
+    };
+    '24h_tmnVolume': string;
+  }
   
+  export interface MarketData {
+    symbol: string;
+    baseAsset: string;
+    baseAsset_png_icon: string;
+    baseAsset_svg_icon: string;
+    baseAssetPrecision: number;
+    quoteAsset: string;
+    quoteAsset_png_icon: string;
+    quoteAsset_svg_icon: string;
+    quotePrecision: number;
+    faName: string;
+    enName: string;
+    faBaseAsset: string;
+    enBaseAsset: string;
+    faQuoteAsset: string;
+    enQuoteAsset: string;
+    stepSize: number;
+    tickSize: number;
+    minQty: number;
+    minNotional: number;
+    stats: MarketStats;
+    createdAt: string;
+    isNew: boolean;
+    isZeroFee: boolean;
+  }
+
+  interface Weather  {
+  id: number;
+  main: string;
+  description: string;
+  icon: string;
+};
+
+interface Main  {
+  temp: number;
+  feels_like: number;
+  temp_min: number;
+  temp_max: number;
+  pressure: number;
+  humidity: number;
+  sea_level: number;
+  grnd_level: number;
+};
+
+interface Wind  {
+  speed: number;
+  deg: number;
+};
+
+interface Clouds  {
+  all: number;
+};
+
+interface Sys  {
+  type: number;
+  id: number;
+  country: string;
+  sunrise: number;
+  sunset: number;
+};
+
+export interface WeatherData  {
+  weather: Weather[];
+  main: Main;
+  visibility: number;
+  wind: Wind;
+  clouds: Clouds;
+  dt: number;
+  sys: Sys;
+};

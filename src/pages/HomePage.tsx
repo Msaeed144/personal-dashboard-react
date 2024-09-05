@@ -8,6 +8,7 @@ import Notif from '../assets/notif.svg';
 import User from '../assets/user.svg'
 import Search from '../assets/search.svg';
 import CryptoHomePage from "../components/CryptoHomePage";
+import Weather from "../components/Weather";
 
 const HomePage = () => {
   const [ allTodos , setAllTodos ] = useState<Todo[]>([])
@@ -54,7 +55,7 @@ const HomePage = () => {
             <label htmlFor="" className=" absolute right-[20rem] top-5">
               <img src={Search} alt="" className=" w-7"/>
             </label>
-            <input type="text" name="" id="" className=" relative bg-transparent border border-secondcol rounded-lg p-1" placeholder="دنبال چی می گردی" />
+            <input type="text" name="" id="" className=" relative bg-transparent border border-secondcol rounded-lg p-1 ps-3" placeholder="دنبال چی می گردی" />
           </div>
         </div>
         <div>
@@ -83,9 +84,11 @@ const HomePage = () => {
             {
               
                 allTodos.map(todo =>(
-                 <div key={todo.id} className="flex gap-4 mb-1 justify-around">
+                 <div key={todo.id} className="flex gap-4 mb-1 justify-between">
                   <p>{todo.text}</p>
-                  {todo.isChecked ? <p className=" text-green-600">انجام شده</p> : <p className="text-red-600">باید انجامش بدی</p>}
+                  <div>
+                   {todo.isChecked ? <p className=" text-green-600 flex justify-end">انجام شده</p> : <p className="text-red-600">باید انجامش بدی</p>}
+                  </div>
                  </div>
                 ))
              
@@ -95,15 +98,21 @@ const HomePage = () => {
         <div className="w-3/5  bg-custom-gradient rounded-xl p-2">
             <Bozorgan />
         </div>
-        <div className="w-1/4 bg-[rgb(134,139,147)] rounded-xl bg-opacity-15 border border-purple-300	 shadow-4xl overflow-auto p-2" style={{scrollbarWidth:"thin" ,scrollbarColor:"#2F293E #e0e0e0"}}>
+        <div className="w-1/4 bg-[rgb(134,139,147)] rounded-xl bg-opacity-15 border border-purple-300	 shadow-4xl overflow-hidden p-2" >
             <DolarTala />
         </div>
 
       </div>
-      <div className="w-full h-2/6 my-5 bg-[rgb(134,139,147)] rounded-xl bg-opacity-15 border border-purple-200 p-2">
+      <div className="w-full h-1/5my-5 bg-[rgb(134,139,147)] rounded-xl bg-opacity-15 border border-purple-200 p-2">
         <CryptoHomePage />
       </div>
-      <div className="w-full h-1/6 my-5 ">s</div>
+      <div className="w-full h-[29%] my-5 flex gap-3">
+            <div className=" h-full w-1/3 rounded-xl border border-purple-200 bg-[rgb(134,139,147)] bg-opacity-15">
+              <Weather />
+            </div>
+            <div className=" h-full w-1/3 rounded-xl border border-purple-200 bg-[rgb(134,139,147)] bg-opacity-15"></div>
+            <div className=" h-full w-1/3 rounded-xl border border-purple-200 bg-[rgb(134,139,147)] bg-opacity-15"></div>
+      </div>
     </div>
   )
 }
