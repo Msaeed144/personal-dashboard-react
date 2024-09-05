@@ -9,7 +9,7 @@ import User from '../assets/user.svg'
 import Search from '../assets/search.svg';
 import CryptoHomePage from "../components/CryptoHomePage";
 import Weather from "../components/Weather";
-import Pollution from "../components/Pollution";
+import Calendar from "../components/Calendar";
 
 const HomePage = () => {
   const [ allTodos , setAllTodos ] = useState<Todo[]>([])
@@ -117,11 +117,11 @@ const HomePage = () => {
                 این پروژه با ری اکت و تایپ اسکریپت زده شده و برای استایل دهی از tailwind استفاده شده همچنین از api ها برای دریافت قیمت ها و ...  استفاده شده
               </p>
               <p>
-                باتشکر از وبسایت https://one-api.ir/ که از سرویس های آن در این پروژه استفاده کردم 
+                باتشکر از وبسایت <a className="text-[#60B7FF] hover:text-[#83c3f8]" href="https://one-api.ir/"> وان سرویس</a> که از سرویس های آن در این پروژه استفاده کردم 
               </p>
             </div>
             <div className=" h-full w-1/3 rounded-xl border border-purple-200 bg-[rgb(134,139,147)] bg-opacity-15">
-            <Pollution />
+              <Calendar />
             </div>
       </div>
     </div>

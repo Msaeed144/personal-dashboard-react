@@ -13,9 +13,11 @@ function Navbar() {
         <div>
             <Link to="/">
                 <Tooltip title="داشبورد" placement="right" arrow enterDelay={200} leaveDelay={100}>
-                    <img className=' w-9 mb-24 mt-2 cursor-pointer' src={Logo} alt="" />
+                    <img className=' w-9 mt-2 cursor-pointer' src={Logo} alt="" />
                 </Tooltip>
             </Link>
+        </div>
+        <div>
             <Link to="/">
                 <Tooltip title="خونه" placement="right" arrow enterDelay={200} leaveDelay={100}>
                     <img className=' w-9 mb-7 cursor-pointer' src={Home} alt="" />

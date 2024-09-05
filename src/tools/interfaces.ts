@@ -369,3 +369,180 @@ export interface WeatherData  {
   dt: number;
   sys: Sys;
 };
+interface UnixTimestamp {
+  fa: string;
+  en: number;
+}
+
+interface Timezone {
+  name: string;
+  number: {
+    fa: string;
+    en: string;
+  };
+}
+
+interface Season {
+  name: string;
+  number: {
+    fa: string;
+    en: string;
+  };
+}
+
+interface Time12 {
+  full: {
+    short: {
+      fa: string;
+      en: string;
+    };
+    full: {
+      fa: string;
+      en: string;
+    };
+  };
+  hour: {
+    fa: string;
+    en: string;
+  };
+  minute: {
+    fa: string;
+    en: string;
+  };
+  second: {
+    fa: string;
+    en: string;
+  };
+  microsecond: {
+    fa: string;
+    en: string;
+  };
+  shift: {
+    short: string;
+    full: string;
+  };
+}
+
+interface Time24 {
+  full: {
+    fa: string;
+    en: string;
+  };
+  hour: {
+    fa: string;
+    en: string;
+  };
+  minute: {
+    fa: string;
+    en: string;
+  };
+  second: {
+    fa: string;
+    en: string;
+  };
+}
+
+interface DateISO {
+  fa: string;
+  en: string;
+}
+
+interface DateUsual {
+  fa: string;
+  en: string;
+}
+
+interface DateFormats {
+  iso: DateISO;
+  usual: DateUsual;
+}
+
+interface FullDate {
+  official: DateFormats;
+  unofficial: DateFormats;
+}
+
+interface OtherDates {
+  gregorian: DateFormats;
+  ghamari: DateFormats;
+}
+
+interface YearInfo {
+  name: string;
+  animal: string;
+  leapyear: string;
+  agone: {
+    days: {
+      fa: string;
+      en: string;
+    };
+    percent: {
+      fa: string;
+      en: string;
+    };
+  };
+  left: {
+    days: {
+      fa: string;
+      en: string;
+    };
+    percent: {
+      fa: string;
+      en: string;
+    };
+  };
+  number: {
+    fa: string;
+    en: string;
+  };
+}
+
+interface MonthInfo {
+  name: string;
+  asterism: string;
+  number: {
+    fa: string;
+    en: string;
+  };
+}
+
+interface DayInfo {
+  name: string;
+  events: {
+    local: string | null;
+    holy: string | null;
+    global: string | null;
+  };
+  number: {
+    fa: string;
+    en: string;
+  };
+}
+
+interface Weekday {
+  name: string;
+  champ: string;
+  number: {
+    fa: string;
+    en: string;
+  };
+}
+
+interface DateInfo {
+  full: FullDate;
+  other: OtherDates;
+  year: YearInfo;
+  month: MonthInfo;
+  day: DayInfo;
+  weekday: Weekday;
+}
+
+export interface DateTimeInfo {
+  unix: UnixTimestamp;
+  timestamp: UnixTimestamp;
+  timezone: Timezone;
+  season: Season;
+  time12: Time12;
+  time24: Time24;
+  date: DateInfo;
+}
