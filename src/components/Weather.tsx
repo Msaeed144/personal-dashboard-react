@@ -67,8 +67,8 @@ const Weather = () => {
         </div> 
         <div className=" flex justify-center items-center">
             <div className=" flex flex-col gap-3 mt-2">
-                <p>دمای هوا {englishToPersian(String(data?.main.temp))} درجه سانتی گراد و </p>
-                <p>در حال حاضر {data?.weather[0].description} است</p>
+                <p className=" md:text-base text-sm">دمای هوا {englishToPersian(String(data?.main.temp))} درجه سانتی گراد و </p>
+                <p className=" md:text-base text-sm">در حال حاضر {data?.weather[0].description} است</p>
             </div>
             <div>
                 <img className="w-[8rem]" src={`https://one-api.ir/weather/?token=640504:66d94f859e0be&action=icon&id=${data?.weather[0].icon}`} alt="" />
