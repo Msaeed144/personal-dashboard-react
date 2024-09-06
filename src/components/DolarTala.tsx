@@ -39,7 +39,7 @@ const DolarTala = () => {
     };
     return (
         <div className=" overflow-hidden">
-            <h2 className="text-center mb-3 text-[#60B7FF]">بی خبر از طلا و دلا نباشی😎</h2>
+            <h2 className="text-center mb-3 text-[#60B7FF] text-xm md:text-sm">بی خبر از طلا و دلا نباشی😎</h2>
             <div>
                 <div className="flex justify-around mb-3 text-sm">
                     <p>طلای <span>{englishToPersian("18")}</span> عیار :</p>

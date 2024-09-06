@@ -10,6 +10,9 @@ import Search from '../assets/search.svg';
 import CryptoHomePage from "../components/CryptoHomePage";
 import Weather from "../components/Weather";
 import Calendar from "../components/Calendar";
+import  Home   from '../assets/home.svg'
+import Chart from '../assets/chart.svg'
+import Bag from '../assets/bag.svg'
 
 const HomePage = () => {
   const [ allTodos , setAllTodos ] = useState<Todo[]>([])
@@ -44,7 +47,7 @@ const HomePage = () => {
   },[jobStatus])
   return (
     <div className=" text-white h-screen w-full mx-4">
-      <div className="w-full h-[5%] mt-4 rounded-xl">
+      <div className="w-full h-[5%] mt-4 rounded-xl flex justify-between">
         <div className="flex gap-4 items-center">
           <div className=" w-7 border rounded-full p-1 cursor-pointer">
             <img src={Notif} alt="" />
@@ -52,21 +55,36 @@ const HomePage = () => {
           <div className=" w-7 border rounded-full p-1 cursor-pointer">
             <img src={User} alt="" />
           </div>
-          <div className="flex cursor-pointer">
-            <label htmlFor="" className=" absolute top-6 right-[19rem] md:right-[20rem] md:top-5">
-              <img src={Search} alt="" className=" md:w-7 w-4"/>
+          <div className="hidden md:flex cursor-pointer">
+            <label htmlFor="" className=" absolute top-[1.15rem] right-[19.5rem] md:right-[21rem] md:top-5 ">
+              <img src={Search} alt="" className=" md:w-6 w-5"/>
             </label>
             <input type="text" name="" id="" className=" relative bg-transparent border border-secondcol rounded-lg p-1 ps-3" placeholder="دنبال چی می گردی" />
           </div>
         </div>
-        <div>
-
+        <div className="md:hidden flex gap-3">
+            <Link to="/" className="">
+              <div className=" border rounded-full p-1">
+               <img className="w-5" src={Home} alt="" />
+              </div>
+            </Link>
+            <Link to="/todo-page" className="">
+              <div className=" border rounded-full p-1">
+               <img className="w-5" src={Bag} alt="" />
+              </div>
+            </Link>
+            <Link to="/crypto" className="">
+              <div className=" border rounded-full p-1">
+               <img className="w-5" src={Chart} alt="" />
+              </div>
+            </Link>
+            
         </div>
       </div>
 
 
-      <div className="w-full md:h-1/4 h-4/6 sm:h-01/2 my-5 flex md:flex-row flex-col gap-3">
-        <div className="md:w-2/6 w-full  bg-[rgb(134,139,147)] rounded-xl bg-opacity-15 border border-purple-300	 shadow-4xl p-2 overflow-auto" style={{scrollbarWidth:"thin" ,scrollbarColor:"#2F293E #e0e0e0"}}>
+      <div className="w-full  h-[30rem] md:h-1/3 my-5 flex md:flex-row flex-col gap-3">
+        <div className="md:w-2/6 w-full  bg-[rgb(134,139,147)] rounded-xl bg-opacity-15 border border-purple-300 shadow-4xl p-2 overflow-auto" style={{scrollbarWidth:"thin" ,scrollbarColor:"#2F293E #e0e0e0"}}>
           <div className="flex justify-between">
           <h2 className="text-center mb-2 font-bold text-xl">لیست کار ها</h2>
           <select name="" id="" className="h-8 text-secondcol bg-transparent rounded-lg border border-secondcol" onChange={(e) => setJobStatus(e.target.value)}>
@@ -112,11 +130,11 @@ const HomePage = () => {
               <Weather />
             </div>
             <div className=" h-full w-full md:w-1/3 rounded-xl border border-purple-200 bg-[rgb(134,139,147)] bg-opacity-15 p-4">
-              <h3 className=" text-center font-extrabold text-3xl mb-3 text-[#60B7FF]">توضیحات پروژه</h3>
-              <p className="mb-2">
+              <h3 className=" text-center font-extrabold text-xl mb-3 text-[#60B7FF]">توضیحات پروژه</h3>
+              <p className="mb-2 text-xs">
                 این پروژه با ری اکت و تایپ اسکریپت زده شده و برای استایل دهی از tailwind استفاده شده همچنین از api ها برای دریافت قیمت ها و ...  استفاده شده ، لازم به ذکره که یه مقداری هنوز نیاز هست که روی ریسپانسیو پروژه کار بشه که به مرور اوکی میشه
               </p>
-              <p>
+              <p className=" text-xs">
                 باتشکر از وبسایت <a className="text-[#60B7FF] hover:text-[#83c3f8]" href="https://one-api.ir/"> وان سرویس</a> که از سرویس های آن در این پروژه استفاده کردم 
               </p>
             </div>
