@@ -6,7 +6,6 @@ import Bozorgan from "../components/Bozorgan";
 import DolarTala from "../components/DolarTala";
 import Notif from '../assets/notif.svg';
 import User from '../assets/user.svg'
-import Search from '../assets/search.svg';
 import CryptoHomePage from "../components/CryptoHomePage";
 import Weather from "../components/Weather";
 import Calendar from "../components/Calendar";
@@ -47,7 +46,7 @@ const HomePage = () => {
   },[jobStatus])
   return (
     <div className=" text-white h-screen w-full mx-4">
-      <div className="w-full h-[5%] mt-4 rounded-xl flex justify-between">
+      <div className="w-full h-[5%] mt-4 rounded-xl flex justify-between items-center">
         <div className="flex gap-4 items-center">
           <div className=" w-7 border rounded-full p-1 cursor-pointer">
             <img src={Notif} alt="" />
