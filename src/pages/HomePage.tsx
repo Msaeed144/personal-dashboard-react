@@ -57,7 +57,6 @@ const HomePage = () => {
           </div>
           <div className="hidden md:flex cursor-pointer">
             <label htmlFor="" className=" absolute top-[1.15rem] right-[19.5rem] md:right-[21rem] md:top-5 ">
-              <img src={Search} alt="" className=" md:w-6 w-5"/>
             </label>
             <input type="text" name="" id="" className=" relative bg-transparent border border-secondcol rounded-lg p-1 ps-3" placeholder="دنبال چی می گردی" />
           </div>
