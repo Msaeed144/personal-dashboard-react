@@ -48,7 +48,6 @@ const Weather = () => {
               `https://one-api.ir/weather/?token=640504:66d94f859e0be&action=current&city=${city}`
             );
             setData(result.data.result);  // ذخیره داده‌ها در حالت
-            console.log(data);
           } catch (error) {
             console.error("Error fetching weather data", error);
           }
