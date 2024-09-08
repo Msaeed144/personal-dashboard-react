@@ -24,7 +24,7 @@ function CryptoPage() {
         );
         setCryptos(formattedData);
       } catch (err) {
-        console.error("Error fetching crypto data:", error);
+        console.error("Error fetching crypto data:", err);
       }
     };
     getCryptos();
