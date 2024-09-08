@@ -124,7 +124,7 @@ function CryptoPage() {
               name=""
               id=""
               placeholder="جستجو..."
-              className=" relative bg-transparent border border-secondcol rounded-lg p-1 ps-3 text-secondcol"
+              className="w-1/2 md:w-1/4 relative bg-transparent border border-secondcol rounded-lg p-1 ps-3 text-secondcol"
               onChange={(e) => setSearch(e.target.value)}
             />
             <select
@@ -140,7 +140,15 @@ function CryptoPage() {
           </div>
           <div className="flex gap-2 text-white">
             <p>مرتب سازی بر اساس :</p>
-            <div className="flex gap-3">
+            <select className="md:hidden bg-transparent text-secondcol border-secondcol rounded-md px-2 border" name="" id="" value={sortOrder} onChange={e=>setSortOrder(e.target.value)}>
+              <option value="default">پیشفرض</option>
+              <option value="cheapest">ارزانترین</option>
+              <option value="expensive">گران ترین</option>
+              <option value="mostProfit">بیشترین سود</option>
+              <option value="leastProfit">کمترین سود</option>
+
+            </select>
+            <div className="md:flex gap-3 hidden">
               <span
                 className={`hover:text-red-600 hover:cursor-pointer ${
                   sortOrder === "default" ? "text-red-600" : ""
