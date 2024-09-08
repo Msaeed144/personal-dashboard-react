@@ -2,7 +2,7 @@ import { MarketData } from "../tools/interfaces"
 import { englishToPersian } from "replace-persian-number";
 import { Tooltip } from "@mui/material";
 
-interface CryptoHomeComponentProps {
+export interface CryptoHomeComponentProps {
   crypto: MarketData;
 }
 
